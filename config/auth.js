@@ -1,3 +1,4 @@
+// config/auth.js
 const passport = require('passport')
 const mongoose = require('mongoose')
 const passportJWT = require('passport-jwt')
@@ -7,9 +8,11 @@ const jwtOptions = require('./jwt')
 const JwtStrategy = passportJWT.Strategy
 
 const tokenStrategy = new JwtStrategy(jwtOptions, (jwtPayload, done) => {
+  console.log('payload received', jwtPayload)
   const user = User.findById(jwtPayload.id)
     .then((user) => {
       if (user) {
+        console.log(user)
         done(null, user)
       } else {
         done(null, false)

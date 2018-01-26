@@ -1,3 +1,4 @@
+// routes/users.js
 const router = require('express').Router()
 const { User } = require('../models')
 const passport = require('../config/auth')
@@ -9,24 +10,19 @@ router.post('/users', (req, res, next) => {
       return next(err)
     }
 
-    res.status(201).send(user)
+    const { name, email, _id, createdAt, updatedAt } = user
+    res.status(201).send({ name, email, _id, createdAt, updatedAt })
   })
 })
 
-router.get('/users/me', passport.authorize('jwt', { session: false }),
-(req, res, next) => {
-
+router.get('/users/me', passport.authorize('jwt', { session: false }), (req, res, next) => {
   if (!req.account) {
     const error = new Error('Unauthorized')
-    error.statusersus = 401
+    error.status = 401
     next(error)
   }
 
   res.json(req.account)
 })
-
-// router.use((req,res,next) => {
-//   debugger
-// })
 
 module.exports = router
