@@ -18,19 +18,14 @@ const studentSchema = new Schema({
 
 const batchSchema = new Schema({
   batchName: { type: String, required: true },
-  startDate: { type: String, require: true },
-  endDate: { type: String, require: true },
-  photo: { type: String, default: 'http://via.placeholder.com/500x180?text=No%20Image' },
+  startDate: { type: String, required: true },
+  endDate: { type: String, required: true },
   yellow: { type: Boolean, default: false },
   red: { type: Boolean, default: false },
   green: { type: Boolean, default: false },
   students: [studentSchema],
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
-  // likedBy: [{ type: Schema.Types.ObjectId, ref: 'users' }],
-  // authorId: { type: Schema.Types.ObjectId, ref: 'users' },
-  // createdAt: { type: Date, default: Date.now },
-  // updatedAt: { type: Date, default: Date.now }
 })
 
 module.exports = mongoose.model('batches', batchSchema)

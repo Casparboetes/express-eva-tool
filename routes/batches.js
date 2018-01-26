@@ -5,7 +5,7 @@ const { Batch } = require('../models')
 router.get('/batches', (req, res, next) => {
   Batch.find()
     // Newest batches first
-    .sort({ createdAt: -1 })
+    .sort({ createdAt: 1 })
     // Send the data in JSON format
     .then((batches) => res.json(batches))
     // Throw a 500 error if something goes wrong
