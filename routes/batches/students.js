@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Batch } = require('../../models')
+const { Batch, Student } = require('../../models')
 
 
 //  const Student
