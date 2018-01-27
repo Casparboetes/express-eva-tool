@@ -1,19 +1,14 @@
 const router = require('express').Router()
-const { Batch, Student } = require('../../models')
+const passport = require('../config/auth')
+const { Student } = require('../models')
 
-
-//  const Student
-
-router.get('/batches/:id/students', (req, res, next) => {
+router.get('/students', (req, res, next) => {
   Student.find()
-    // Newest students first
     .sort({ createdAt: 1 })
-    // Send the data in JSON format
     .then((students) => res.json(students))
-    // Throw a 500 error if something goes wrong
     .catch((error) => next(error))
   })
-  .get('/batches/:id/students/', (req, res, next) => {
+  .get('/students/:id', (req, res, next) => {
     const id = req.params.id
     Student.findById(id)
       .then((student) => {
@@ -22,7 +17,7 @@ router.get('/batches/:id/students', (req, res, next) => {
       })
       .catch((error) => next(error))
   })
-  .post('/batches/:id/students', (req, res, next) => {
+  .post('/students', (req, res, next) => {
     let newStudent = req.body
 
     Student.create(newStudent)
@@ -30,7 +25,7 @@ router.get('/batches/:id/students', (req, res, next) => {
       .catch((error) => next(error))
   })
 
-  .put('/bacthes/students/:id', (req, res, next) => {
+  .put('/students/:id', (req, res, next) => {
     const studentId = req.params.id
     let update = req.body
 
@@ -42,7 +37,7 @@ router.get('/batches/:id/students', (req, res, next) => {
       .catch((error) => next(error))
   })
 
-  .patch('/bacthes/:id/students/:id', (req, res, next) => {
+  .patch('/students/:id', (req, res, next) => {
     const studentId = req.params.id
     let update = req.body
 
@@ -54,7 +49,7 @@ router.get('/batches/:id/students', (req, res, next) => {
       .catch((error) => next(error))
   })
 
-  .delete('/batches/:id/students/:id', (req, res, next) => {
+  .delete('/students/:id', (req, res, next) => {
     const studentId = req.params.id
 
     Student.findOneAndRemove(studentId)
