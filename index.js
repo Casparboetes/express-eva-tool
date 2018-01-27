@@ -23,7 +23,6 @@ app
   .use(users)
   .use(sessions)
 
-  // catch 404 and forward to error handler
   .use((req, res, next) => {
     const err = new Error('Not Found')
     err.status = 404
