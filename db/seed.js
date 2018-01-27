@@ -9,7 +9,7 @@ const createUrl = (path) => {
 
 const createStudents = (token) => {
   return students.map((student) => {
-    reuturn request
+    return request
       .post(createUrl('/students'))
       .set('Authorization', `Bearer ${token}`)
       .send(student)
