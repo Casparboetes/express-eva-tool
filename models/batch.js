@@ -3,7 +3,7 @@ const mongoose = require('../config/database')
 const { Schema } = mongoose
 
 const batchSchema = new Schema({
-  batchName: { type: String, required: true },
+  batch: { type: Number, required: true },
   startDate: { type: String, required: true },
   endDate: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
