@@ -14,7 +14,7 @@ const createBatches = (token) => {
       .set('Authorization', `Bearer ${token}`)
       .send(batch)
       .then((res) => {
-        console.log('Batch seeded...', res.body)
+        console.log('Batch seeded...', res.body.batchNum)
       })
       .catch((err) => {
         console.error('Error seeding batch!', err)
@@ -29,7 +29,7 @@ const createStudents = (token) => {
       .set('Authorization', `Bearer ${token}`)
       .send(student)
       .then((res) => {
-        console.log('Student seeded...', res.body.name)
+        console.log('Student seeded...', res.body.studentName)
       })
       .catch((err) => {
         console.error('Error seeding student!', err)

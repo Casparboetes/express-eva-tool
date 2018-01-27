@@ -2,8 +2,9 @@ const router = require('express').Router()
 const passport = require('../config/auth')
 const { Student } = require('../models')
 
-router.get('/students', (req, res, next) => {
-  Student.find()
+router.get('/', (req, res, next) => {
+  const id = req.params.id
+    Student.find({'batch': id})
     .sort({ createdAt: 1 })
     .then((students) => res.json(students))
     .catch((error) => next(error))
@@ -17,6 +18,7 @@ router.get('/students', (req, res, next) => {
       })
       .catch((error) => next(error))
   })
+
   .post('/students', (req, res, next) => {
     let newStudent = req.body
 
