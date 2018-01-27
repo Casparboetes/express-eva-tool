@@ -5,95 +5,13 @@
     "endDate": "03/27/2018"
   },
   {
-    "batchNum": "Batch 2",
+    "batchNum": "2",
     "startDate": "03/27/2018",
-    "endDate": "05/27/2018",
-
-    "students": [
-                  {
-                    "studentName": "Alexander Max",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": true,
-                    "yellow": false,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "Freek de Jonge",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": true,
-                    "yellow": false,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "Jan Alleman",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": false,
-                    "yellow": false,
-                    "red": true,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "John Doe",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": false,
-                    "yellow": true,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  }
-                ]
-
+    "endDate": "05/27/2018"
   },
   {
     "batchNum": "3",
     "startDate": "05/27/2018",
-    "endDate": "07/27/2018",
-    "green": false,
-    "yellow": false,
-    "red": true,
-    "students": [
-                  {
-                    "studentName": "Alexander Max",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": true,
-                    "yellow": false,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "Freek de Jonge",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": true,
-                    "yellow": false,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "Jan Alleman",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": false,
-                    "yellow": false,
-                    "red": true,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  },
-                  {
-                    "studentName": "John Doe",
-                    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
-                    "green": false,
-                    "yellow": true,
-                    "red": false,
-                    "remark": "Remarks...",
-                    "evaluationDate": "01/27/2018"
-                  }
-                ]
-
+    "endDate": "07/27/2018"
   }
 ]
