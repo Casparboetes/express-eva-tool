@@ -1,9 +1,16 @@
 const request = require('superagent')
 const user = require('./fixtures/user.json')
 const batches = require('./fixtures/batches.json')
+const students = require('./fixtures/students.json')
 
 const createUrl = (path) => {
   return `${process.env.HOST || `http://localhost:${process.env.PORT || 3030}`}${path}`
+}
+
+const createStudents = (token) => {
+  return students.map((student) => {
+    reuturn request
+  }
 }
 
 const createBatches = (token) => {
