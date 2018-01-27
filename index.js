@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('./config/auth')
 const { students, batches, users, sessions } = require('./routes')
@@ -9,15 +10,16 @@ let app = express()
 
 
 app
+  .use(cors())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(passport.initialize())
-  .use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
-  next()
-  })
+  // .use(function(req, res, next) {
+  // res.header('Access-Control-Allow-Origin', '*')
+  // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  // res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
+  // next()
+  // })
   .use(batches)
   .use(students)
   .use(users)
