@@ -14,10 +14,10 @@ const createStudents = (token) => {
       .set('Authorization', `Bearer ${token}`)
       .send(student)
       .then((res) => {
-        console.log('Students seeded..', red.body.name)
+        console.log('Student seeded...', res.body.name)
       })
-      .cath((err) => {
-        console.error('Error seeding students!, err')
+      .catch((err) => {
+        console.error('Error seeding student!', err)
       })
   })
 }
