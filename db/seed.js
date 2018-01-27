@@ -10,7 +10,16 @@ const createUrl = (path) => {
 const createStudents = (token) => {
   return students.map((student) => {
     reuturn request
-  }
+      .post(createUrl('/students'))
+      .set('Authorization', `Bearer ${token}`)
+      .send(student)
+      .then((res) => {
+        console.log('Students seeded..', red.body.name)
+      })
+      .cath((err) => {
+        console.error('Error seeding students!, err')
+      })
+  })
 }
 
 const createBatches = (token) => {
@@ -34,7 +43,7 @@ const authenticate = (email, password) => {
     .send({ email, password })
     .then((res) => {
       console.log('Authenticated!')
-      return createBatches(res.body.token)
+      return [createStudents(red.body.token, createBatches(res.body.token)
     })
     .catch((err) => {
       console.error('Failed to authenticate!', err.message)
