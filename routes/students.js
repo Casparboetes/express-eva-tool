@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const passport = require('../config/auth')
 const { Student } = require('../models')
 
 router.get('/students', (req, res, next) => {

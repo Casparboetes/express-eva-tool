@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const passport = require('../config/auth')
 const { Batch } = require('../models')
 
 router.get('/batches', (req, res, next) => {
@@ -16,8 +17,12 @@ router.get('/batches', (req, res, next) => {
       })
       .catch((error) => next(error))
   })
-  .post('/batches', authenticate, (req, res, next) => {
-    let newBatch = req.body
+  .post('/batches', (req, res, next) => {
+    let newBatch = {
+      batchNum: req.body.batchNum,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate
+    }
 
     Batch.create(newBatch)
       .then((batch) => res.json(batch))
