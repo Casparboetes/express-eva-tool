@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Student } = require('../../models')
+const { Student } = require('../models')
 
 router.get('/students', (req, res, next) => {
   Student.find()
