@@ -1,4 +1,14 @@
-
+[
+  {
+    "studentName": "Arthur Zeeman",
+    "photo": "http://via.placeholder.com/500x180?text=No%20Image",
+    "batchNum": "1",
+    "green": true,
+    "yellow": false,
+    "red": false,
+    "remark": "Remarks...",
+    "evaluationDate": "01/27/2018"
+  },
   {
   "studentName": "Arthur Zeeman",
   "photo": "http://via.placeholder.com/500x180?text=No%20Image",
@@ -9,3 +19,4 @@
   "remark": "Remarks...",
   "evaluationDate": "01/27/2018"
   }
+]
