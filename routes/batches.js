@@ -1,14 +1,10 @@
-// routes/batches.js
 const router = require('express').Router()
 const { Batch } = require('../models')
 
 router.get('/batches', (req, res, next) => {
   Batch.find()
-    // Newest batches first
-    .sort({ createdAt: 1 })
-    // Send the data in JSON format
+    .sort({ createdAt: -1 })
     .then((batches) => res.json(batches))
-    // Throw a 500 error if something goes wrong
     .catch((error) => next(error))
   })
   .get('/batches/:id', (req, res, next) => {
