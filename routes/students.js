@@ -3,8 +3,8 @@ const passport = require('../config/auth')
 const { Student } = require('../models')
 
 router.get('/', (req, res, next) => {
-  const id = req.params.batchNum
-    Student.find({'batch': id})
+  // const id = req.params.batchNum
+    Student.find()
     .sort({ batchNum: 1 })
     .then((students) => res.json(students))
     .catch((error) => next(error))
