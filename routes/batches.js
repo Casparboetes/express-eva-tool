@@ -18,11 +18,7 @@ router.get('/batches', (req, res, next) => {
       .catch((error) => next(error))
   })
   .post('/batches', (req, res, next) => {
-    let newBatch = {
-      batchNum: req.body.batchNum,
-      startDate: req.body.startDate,
-      endDate: req.body.endDate
-    }
+    let newBatch = req.body
 
     Batch.create(newBatch)
       .then((batch) => res.json(batch))

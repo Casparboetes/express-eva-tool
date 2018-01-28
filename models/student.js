@@ -2,6 +2,7 @@ const mongoose = require('../config/database')
 const { Schema } = mongoose
 
 const studentSchema = new Schema({
+  batch_id: { type: Schema.Types.ObjectId, ref: 'batches' },
   studentName: { type: String, required: true },
   photo: { type: String, default: 'http://via.placeholder.com/500x180?text=No%20Image' },
   batchNum: { type: Number, required: true },
