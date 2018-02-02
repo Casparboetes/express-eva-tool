@@ -19,6 +19,13 @@ router.get('/', (req, res, next) => {
       .catch((error) => next(error))
   })
 
+  .get('/students/batch/:id', (req, res, next) => {
+    const id = req.params.id
+    Student.find( { batchNum : id } )
+    .then((students) => res.json(students))
+    .catch((error) => next(error))
+  })
+
   .post('/students', (req, res, next) => {
     let newStudent = req.body
 

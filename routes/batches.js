@@ -8,7 +8,7 @@ router.get('/batches', (req, res, next) => {
     .then((batches) => res.json(batches))
     .catch((error) => next(error))
   })
-  .get('/batches/:id', (req, res, next) => {
+  .get('/batches/:id', (mongoosereq, res, next) => {
     const id = req.params.id
     Batch.findById(id)
       .then((batch) => {
@@ -24,42 +24,5 @@ router.get('/batches', (req, res, next) => {
       .then((batch) => res.json(batch))
       .catch((error) => next(error))
   })
-
-  // .put('/batches/:id', (req, res, next) => {
-  //   const batchId = req.params.id
-  //   let update = req.body
-  //
-  //   Batch.findOneAndUpdate(batchId,update)
-  //     .then((batch) => {
-  //       if (!batch) { return next() }
-  //       res.json(batch)
-  //     })
-  //     .catch((error) => next(error))
-  // })
-
-  // .patch('/batches/:id', (req, res, next) => {
-  //   const batchId = req.params.id
-  //   let update = req.body
-  //
-  //   Batch.findOneAndUpdate(batchId,update)
-  //     .then((batch) => {
-  //       if (!batch) { return next() }
-  //       res.json(batch)
-  //     })
-  //     .catch((error) => next(error))
-  // })
-
-  // .delete('/batches/:id', (req, res, next) => {
-  //   const batchId = req.params.id
-  //
-  //   Batch.findOneAndRemove(batchId)
-  //     .then((batch) => {
-  //       if (!batch) { return next() }
-  //       res.json(batch)
-  //     })
-  //     .catch((error) => next(error))
-  // })
-
-// router.use('/batches/:id/students', students)
 
 module.exports = router

@@ -5,9 +5,7 @@ const { Schema } = mongoose
 const batchSchema = new Schema({
   batchNum: { type: Number, required: true },
   startDate: { type: String, required: true },
-  endDate: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+  endDate: { type: String, required: true }
 })
 
 module.exports = mongoose.model('batches', batchSchema)
